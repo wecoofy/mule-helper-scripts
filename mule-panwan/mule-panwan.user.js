@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name              뮬 장터 도우미-판매완료
+// @name              뮬 판매완료 도우미
 // @description       판매가 완료됐으면 판매완료 버튼을 쳐누르라고
-// @match             https://www.mule.co.kr/*
+// @match             https://www.mule.co.kr/bbs/market/*
 // @icon              https://www.mule.co.kr/favicon/android-icon-192x192.png
 // @grant             none
 // @version           1.3
 // @author            coofy
 // @license           MIT
-// @namespace         https://github.com/wecoofy/mule-market-helper
-// @homepage          https://github.com/wecoofy/mule-market-helper
-// @homepageURL       https://github.com/wecoofy/mule-market-helper
-// @supportURL        https://github.com/wecoofy/mule-market-helper/issues
+// @namespace         https://github.com/wecoofy/mule-helper-scripts
+// @homepage          https://github.com/wecoofy/mule-helper-scripts
+// @homepageURL       https://github.com/wecoofy/mule-helper-scripts
+// @supportURL        https://github.com/wecoofy/mule-helper-scripts/issues
 // ==/UserScript==
 
 (function () {

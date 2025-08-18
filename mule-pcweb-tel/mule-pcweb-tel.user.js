@@ -1,14 +1,49 @@
 // ==UserScript==
-// @name              뮬 PC 호환 연락 버튼
+// @name              뮬 문자/전화 버튼 PC 호환
 // @description       PC에서도 뮬의 문자발송/전화걸기 버튼 활성화
-// @match             https://www.mule.co.kr/*
+// @match             https://www.mule.co.kr/bbs/market/*
 // @icon              https://www.mule.co.kr/favicon/android-icon-192x192.png
 // @grant             none
 // @version           1.0
 // @author            coofy
 // @license           MIT
-// @namespace         https://github.com/wecoofy/mule-market-helper
-// @homepage          https://github.com/wecoofy/mule-market-helper
-// @homepageURL       https://github.com/wecoofy/mule-market-helper
-// @supportURL        https://github.com/wecoofy/mule-market-helper/issues
+// @namespace         https://github.com/wecoofy/mule-helper-scripts
+// @homepage          https://github.com/wecoofy/mule-helper-scripts
+// @homepageURL       https://github.com/wecoofy/mule-helper-scripts
+// @supportURL        https://github.com/wecoofy/mule-helper-scripts/issues
 // ==/UserScript==
+
+(function () {
+  "use strict";
+
+  // 문서 전체에 클릭 이벤트 리스너를 추가합니다.
+  document.body.addEventListener("click", function (event) {
+    // 클릭된 요소가 'div.phoneEncode'이거나 그 자식 요소인지 확인합니다.
+    const phoneEncodeElement = event.target.closest("div.phoneEncode");
+
+    // 만약 phoneEncodeElement를 찾았다면, 원하는 작업을 수행합니다.
+    if (phoneEncodeElement) {
+      console.log(phoneEncodeElement);
+
+      // 여기에 원하는 로직을 추가하세요.
+      // 예: 1초 후에 전화번호가 표시되면 버튼을 수정하는 로직
+      // setTimeout(modifyButtons, 1000); // 1초 대기 후 실행
+      modifyButtons();
+    }
+  });
+
+  function modifyButtons() {
+    const phoneDecodeDiv = document.querySelector(".phoneDecode");
+    if (phoneDecodeDiv && phoneDecodeDiv.textContent.trim() !== "") {
+      console.log("modifying buttons");
+      // 여기에 버튼을 수정하는 코드를 추가합니다.
+      const buttons = phoneDecodeDiv.querySelectorAll("a");
+      const smsBtn = buttons[0];
+      const telBtn = buttons[1];
+      const phoneNumber = phoneDecodeDiv.childNodes[0].textContent.trim();
+
+      smsBtn.href = `sms:${phoneNumber}`;
+      telBtn.href = `tel:${phoneNumber}`;
+    }
+  }
+})();
