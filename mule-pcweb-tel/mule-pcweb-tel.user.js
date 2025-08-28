@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              뮬 문자/전화 버튼 PC 호환
 // @description       PC에서도 뮬의 문자발송/전화걸기 버튼 활성화
-// @match             https://www.mule.co.kr/bbs/market/*
+// @match             https://www.mule.co.kr/
 // @icon              https://www.mule.co.kr/favicon/android-icon-192x192.png
 // @grant             none
 // @version           1.0
